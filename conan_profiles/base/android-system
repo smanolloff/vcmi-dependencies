@@ -1,2 +1,6 @@
 [replace_requires]
 zlib/*: zlib/[*]@system
+
+[replace_tool_requires]
+zlib/*: zlib/[*]@system
+
