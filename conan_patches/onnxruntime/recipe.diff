@@ -1,0 +1,12 @@
+index 0757ecd..587294b 100644
+--- a/recipes/onnxruntime/all/conanfile.py
++++ b/recipes/onnxruntime/all/conanfile.py
+@@ -34,6 +34,8 @@ class OnnxRuntimeConan(ConanFile):
+         "fPIC": True,
+         "with_xnnpack": False,
+         "with_cuda": False,
++        # Prevents libcurl dependency (fails to build due to system zlib)
++        "date/*:use_system_tz_db": True,
+     }
+     short_paths = True
+ 
