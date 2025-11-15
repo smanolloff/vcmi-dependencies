@@ -3,9 +3,9 @@ include(msvc)
 [settings]
 # https://blog.knatten.org/2022/08/26/microsoft-c-versions-explained/
 # https://learn.microsoft.com/en-us/cpp/overview/compiler-versions
-# v143 / 14.30 / 19.30
-compiler.version=193
-compiler.update=0
+# v144 / 14.44 / 19.44
+compiler.version=194
+compiler.update=4
 
 [conf]
 # VS 2022
