@@ -14,7 +14,7 @@
    elseif (onnxruntime_target_platform STREQUAL "ARM64EC")
      enable_language(ASM_MARMASM)
 -  elseif (onnxruntime_target_platform STREQUAL "ARM" OR CMAKE_GENERATOR MATCHES "ARM")
-+  elseif (onnxruntime_target_platform STREQUAL "ARM" OR onnxruntime_target_platform STREQUAL "ARM64" OR CMAKE_GENERATOR MATCHES "ARM")
++  elseif (onnxruntime_target_platform STREQUAL "ARM" OR CMAKE_GENERATOR MATCHES "ARM" OR onnxruntime_target_platform STREQUAL "arm64")
      set(onnxruntime_target_platform "ARM")
      enable_language(ASM_MARMASM)
    elseif (onnxruntime_target_platform STREQUAL "x64" OR onnxruntime_target_platform STREQUAL "x86_64" OR onnxruntime_target_platform STREQUAL "AMD64" OR CMAKE_GENERATOR MATCHES "Win64")
