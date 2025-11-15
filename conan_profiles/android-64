@@ -3,6 +3,3 @@ include(base/android)
 [settings]
 arch=armv8
 os.api_level=21
-
-[conf]
-tools.cmake.cmaketoolchain:extra_variables={"CMAKE_C_FLAGS":"-march=armv8.2-a+bf16","CMAKE_CXX_FLAGS":"-march=armv8.2-a+bf16"}
