@@ -43,11 +43,19 @@ jobs:
             conan_system_libs: zlib
           - platform: windows-x64
             os: windows-latest
-            conan_profiles: '["msvc-x64"]'
+            conan_profiles: '["msvc-x64", "base/msvc-win8"]'
+            conan_options: -o "&:target_pre_windows10=True"
+          - platform: windows-x64-win7
+            os: windows-latest
+            conan_profiles: '["msvc-x64", "base/msvc-win7"]'
             conan_options: -o "&:target_pre_windows10=True"
           - platform: windows-x86
             os: windows-latest
-            conan_profiles: '["msvc-x86"]'
+            conan_profiles: '["msvc-x86", "base/msvc-win8"]'
+            conan_options: -o "&:target_pre_windows10=True"
+          - platform: windows-x86-win7
+            os: windows-latest
+            conan_profiles: '["msvc-x86", "base/msvc-win7"]'
             conan_options: -o "&:target_pre_windows10=True"
           - platform: windows-arm64
             os: windows-11-arm
@@ -154,7 +162,7 @@ jobs:
 
           if [[ $package == qt ]] ; then
             packagePath="$recipePathQt/5.x.x"
-          elif [[ $package == onnxruntime ]] && [[ ${{ matrix.platform }} == windows-x86 ]] ; then
+          elif [[ $package == onnxruntime ]] && [[ ${{ matrix.platform }} =~ win7 ]] ; then
             continue
           else
             packagePath="recipes/$package/all"
