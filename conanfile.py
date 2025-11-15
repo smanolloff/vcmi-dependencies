@@ -28,11 +28,13 @@ class VCMI(ConanFile):
     options = {
         "target_pre_windows10": [True, False],
         "with_ffmpeg": [True, False],
+        "with_onnxruntime": [True, False],
         "lua_lib": [None, "luajit", "lua"]
     }
     default_options = {
         "target_pre_windows10": False,
         "with_ffmpeg": True,
+        "with_onnxruntime": True,
         "lua_lib": "luajit",
     }
 
@@ -87,7 +89,7 @@ class VCMI(ConanFile):
         else:
             self.requires("qt/[~5.15.2]")
 
-        if not (self.settings.os == "Windows" and self.settings.arch == "x86"):
+        if self.options.with_onnxruntime:
             self.requires("onnxruntime/1.18.1")
 
     def validate(self):
