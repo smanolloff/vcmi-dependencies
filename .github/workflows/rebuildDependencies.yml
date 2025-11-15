@@ -112,12 +112,6 @@ jobs:
         [conf]
         tools.cmake.cmaketoolchain:generator=Ninja" >> $(conan profile path default)
 
-        set -x
-        ls -la "C:\Program Files (x86)\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC" || :
-        ls -la "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC" || :
-        reg.exe query "HKLM\\SOFTWARE\\WOW6432Node\\Microsoft\\VisualStudio\\SxS\\VC7" || echo "Registry key not present or reg.exe failed"
-        exit 1
-
     - name: Install system libs recipes
       if: ${{ matrix.conan_system_libs }}
       run: |
