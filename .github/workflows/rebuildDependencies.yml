@@ -119,6 +119,7 @@ jobs:
 
     - name: Build recipes with our patches
       run: |
+        set -x
         cciRepo='conan-center-index'
         branchName='master'
         recipePathQt='recipes/qt'
