@@ -259,3 +259,15 @@ jobs:
         name: dependencies-${{ matrix.platform }}
         compression-level: 0
         path: ${{ env.DEPS_FILE }}
+
+    - name: (debug) Upload conan graph
+      uses: actions/upload-artifact@v4
+      with:
+        name: conan graph-${{ matrix.platform }}
+        path: graph.json
+
+    - name: (debug) Upload conan packages list
+      uses: actions/upload-artifact@v4
+      with:
+        name: conan packages-${{ matrix.platform }}
+        path: pkglist.json
