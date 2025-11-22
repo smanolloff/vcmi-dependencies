@@ -10,6 +10,9 @@ ninja/1.12.1
 # Qt 5 depends on 0.4.8, but it doesn't build for iOS
 md4c/0.4.8: md4c/0.5.2
 
+[replace_tool_requires]
+md4c/0.4.8: md4c/0.5.2
+
 [conf]
 tools.cmake.cmaketoolchain:generator=Ninja
 
