@@ -3,6 +3,9 @@
 include(common)
 
 [settings]
+compiler=msvc
+compiler.cppstd={{ vars.cppstd }}
+compiler.runtime=dynamic
 os=Windows
 
 [options]
