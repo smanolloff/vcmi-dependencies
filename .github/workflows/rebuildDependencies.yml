@@ -1,6 +1,9 @@
 name: VCMI - dependencies
 
 on:
+  push:
+    branches:
+      - mmai-tmp
   pull_request:
     paths-ignore:
       - README.md
