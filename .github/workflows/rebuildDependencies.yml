@@ -251,6 +251,10 @@ jobs:
           --format=json \
           > $hostPackagesFile
 
+        cat $buildPackagesFile
+        cat "-------------"
+        cat $hostPackagesFile
+
         # Some are both build and host requirements and must not be removed
         # => exclude them from the list
         python3 "$buildPackagesFile" "$hostPackagesFile" "$buildFilteredPackagesFile" -c '
@@ -261,6 +265,7 @@ jobs:
           json.dump({"Local Cache": filtered_dict}, open(sys.argv[3], "w"))
         '
 
+        find .
         conan remove --list "$buildFilteredPackagesFile" --confirm
 
     - name: Create list of built packages
