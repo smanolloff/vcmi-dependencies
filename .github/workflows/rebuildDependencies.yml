@@ -252,7 +252,7 @@ jobs:
           > $hostPackagesFile
 
         cat $buildPackagesFile
-        cat "-------------"
+        echo "-------------"
         cat $hostPackagesFile
 
         # Some are both build and host requirements and must not be removed
